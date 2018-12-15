@@ -38,10 +38,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cleaner.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Ingredients\Ingredient.cs" />
     <Compile Include="IObservable.cs" />
+    <Compile Include="IObservableCook.cs" />
     <Compile Include="IObserver.cs" />
+    <Compile Include="IObserverCook.cs" />
     <Compile Include="Models\Chef.cs" />
     <Compile Include="Models\Cook.cs" />
     <Compile Include="Models\Entity.cs" />
@@ -55,6 +58,9 @@
     <Compile Include="Recipes\BananaSplit.cs" />
     <Compile Include="Recipes\Recipe.cs" />
     <Compile Include="Sleeper.cs" />
+    <Compile Include="Tools\Knife.cs" />
+    <Compile Include="Tools\Spoon.cs" />
+    <Compile Include="Tools\Tool.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

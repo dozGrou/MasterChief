@@ -10,13 +10,15 @@ namespace MasterChief.Models
         {
             get { return _entities; }
         }
+        public Cleaner Cleaner { get; set; }
 
         public Model()
         {
+            Cleaner = new Cleaner();
             List<KitchenClerk> kitchenClerks = new List<KitchenClerk>
             {
-                new KitchenClerk(),
-                new KitchenClerk(),
+                new KitchenClerk(this),
+                new KitchenClerk(this),
             };
             List<Cook> cooks = new List<Cook>
             {
@@ -38,28 +40,28 @@ namespace MasterChief.Models
             
             Entities.Add(chef);
             
-//            Order order = new Order();
-//            Recipe recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new BananaSplit();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new BananaSplit();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            chef.AssignOrder(order);
+            Order order = new Order();
+            Recipe recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new BananaSplit();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new BananaSplit();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            chef.AssignOrder(order);
         }
     }
 }

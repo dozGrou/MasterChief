@@ -2,10 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MasterChief.Recipes;
+using MasterChief.Tools;
 
 namespace MasterChief.Models
 {
-    public class Cook : Entity, IObservable<KitchenClerk, Plate>
+    public class Cook : Entity, IObservableCook<KitchenClerk, Plate>
     {
         public List<Recipe> Recipes { get; set; }
         private const int TimeToPrepareRecipe = 5 * 60; //minutes * seconds
@@ -35,8 +36,10 @@ namespace MasterChief.Models
         private void RecipeEnded()
         {
             this.Notify(new Plate(this.Recipes.First())); //Notify kitchen clerk that the plate is ready
+            this.NotifyCleanTools(this.Recipes.First().Tools);
+            
             TimeRemainingPrepareRecipe = TimeToPrepareRecipe; //Reinitialize timer
-            Recipes.Remove(Recipes.First()); //Remove recipe already done
+            Recipes.Remove(Recipes.First()); //Remove recipe just done
         }
 
         public void Attach(KitchenClerk observer)
@@ -52,6 +55,11 @@ namespace MasterChief.Models
         public void Notify(Plate plate)
         {
             this.GetKitchenClerkFree().Update(plate);
+        }
+
+        public void NotifyCleanTools(List<Tool> tools)
+        {
+            this.GetKitchenClerkFree().UpdateCleanTools(tools);
         }
 
         private KitchenClerk GetKitchenClerkFree()
