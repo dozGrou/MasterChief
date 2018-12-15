@@ -33,7 +33,8 @@ namespace MasterChief
         public void WashTools(IEnumerable<Tool> tools)
         {
             this.WashingTools = true;
-            Console.WriteLine("Washing tools : ");
+            Console.WriteLine("Washing tools");
+            Console.WriteLine("-------------");
             foreach (Tool tool in tools)
             {
                 Console.WriteLine("Tool : {0}", tool.GetType().Name);

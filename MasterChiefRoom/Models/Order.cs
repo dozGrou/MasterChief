@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using MasterChief.Recipes;
+using MasterChiefRoom.Recipes;
 
-namespace MasterChief.Models
+namespace MasterChiefRoom.Models
 {
     public class Order
     {
