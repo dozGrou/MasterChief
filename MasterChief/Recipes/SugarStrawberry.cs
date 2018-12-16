@@ -1,7 +1,9 @@
-﻿using MasterChief.Ingredients;
+﻿using System;
+using MasterChief.Ingredients;
 
 namespace MasterChief.Recipes
 {
+    [Serializable]
     class SugarStrawberry : Recipe
     {
         protected override void CreateIngredients()

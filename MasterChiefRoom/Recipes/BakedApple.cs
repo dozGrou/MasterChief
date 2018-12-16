@@ -1,8 +1,10 @@
-﻿using MasterChiefRoom.Ingredients;
+﻿using System;
+using MasterChiefRoom.Ingredients;
 using MasterChiefRoom.Recipes;
 
 namespace MasterChiefRoom.Recipes
 {
+    [Serializable]
     class BakedApple : Recipe
     {
         protected override void CreateIngredients()

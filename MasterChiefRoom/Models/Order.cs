@@ -4,6 +4,7 @@ using MasterChiefRoom.Recipes;
 
 namespace MasterChiefRoom.Models
 {
+    [Serializable]
     public class Order
     {
         public int TableId { get; set; }

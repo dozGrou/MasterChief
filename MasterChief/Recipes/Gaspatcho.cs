@@ -1,7 +1,9 @@
+using System;
 using MasterChief.Ingredients;
 
 namespace MasterChief.Recipes
 {
+    [Serializable]
     public class Gaspatcho : Recipe
     {
         protected override void CreateIngredients()

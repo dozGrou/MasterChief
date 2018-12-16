@@ -10,6 +10,7 @@ namespace MasterChief.Models
         {
             get { return _entities; }
         }
+        public Chef Chef { get; set; }
         public Cleaner Cleaner { get; set; }
 
         public Model()
@@ -25,7 +26,7 @@ namespace MasterChief.Models
                 new Cook(),
                 new Cook(),
             };
-            Chef chef = new Chef(cooks);
+            Chef = new Chef(cooks);
 
             foreach (KitchenClerk kitchenClerk in kitchenClerks)
             {
@@ -34,34 +35,34 @@ namespace MasterChief.Models
                     cook.Attach(kitchenClerk);
                     Entities.Add(cook);
                 }
-                kitchenClerk.Attach(chef);
+                kitchenClerk.Attach(Chef);
                 Entities.Add(kitchenClerk);
             }
             
-            Entities.Add(chef);
+            Entities.Add(Chef);
             
-            Order order = new Order();
-            Recipe recipe = new AppleIceCream();
-            recipe.OrderId = order.GetHashCode();
-            order.Recipes.Add(recipe);
-            
-            recipe = new BananaSplit();
-            recipe.OrderId = order.GetHashCode();
-            order.Recipes.Add(recipe);
-            
-            recipe = new AppleIceCream();
-            recipe.OrderId = order.GetHashCode();
-            order.Recipes.Add(recipe);
-            
-            recipe = new AppleIceCream();
-            recipe.OrderId = order.GetHashCode();
-            order.Recipes.Add(recipe);
-            
-            recipe = new BananaSplit();
-            recipe.OrderId = order.GetHashCode();
-            order.Recipes.Add(recipe);
-            
-            chef.AssignOrder(order);
+//            Order order = new Order();
+//            Recipe recipe = new AppleIceCream();
+//            recipe.OrderId = order.GetHashCode();
+//            order.Recipes.Add(recipe);
+//            
+//            recipe = new BananaSplit();
+//            recipe.OrderId = order.GetHashCode();
+//            order.Recipes.Add(recipe);
+//            
+//            recipe = new AppleIceCream();
+//            recipe.OrderId = order.GetHashCode();
+//            order.Recipes.Add(recipe);
+//            
+//            recipe = new AppleIceCream();
+//            recipe.OrderId = order.GetHashCode();
+//            order.Recipes.Add(recipe);
+//            
+//            recipe = new BananaSplit();
+//            recipe.OrderId = order.GetHashCode();
+//            order.Recipes.Add(recipe);
+//            
+//            Chef.AssignOrder(order);
         }
     }
 }

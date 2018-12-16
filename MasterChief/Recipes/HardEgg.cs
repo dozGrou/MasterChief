@@ -1,7 +1,9 @@
-﻿using MasterChief.Ingredients;
+﻿using System;
+using MasterChief.Ingredients;
 
 namespace MasterChief.Recipes
 {
+    [Serializable]
     class HardEgg : Recipe
     {
         protected override void CreateIngredients()

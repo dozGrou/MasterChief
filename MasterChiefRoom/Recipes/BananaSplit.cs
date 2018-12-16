@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MasterChiefRoom.Ingredients;
 using MasterChiefRoom.Tools;
 
 namespace MasterChiefRoom.Recipes
 {
+    [Serializable]
     class BananaSplit : Recipe
     {
         protected override void CreateIngredients()

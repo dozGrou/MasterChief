@@ -1,7 +1,9 @@
-﻿using MasterChiefRoom.Ingredients;
+﻿using System;
+using MasterChiefRoom.Ingredients;
 
 namespace MasterChiefRoom.Recipes
 {
+    [Serializable]
     class ChocolateMousse : Recipe
     {
         protected override void CreateIngredients()

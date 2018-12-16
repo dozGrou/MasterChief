@@ -1,7 +1,9 @@
+using System;
 using MasterChief.Ingredients;
 
 namespace MasterChief.Recipes
 {
+    [Serializable]
     public class OeufsCocotte : Recipe
     {
         protected override void CreateIngredients()

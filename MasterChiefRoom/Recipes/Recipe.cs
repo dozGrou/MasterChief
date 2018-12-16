@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using MasterChiefRoom.Ingredients;
 using MasterChiefRoom.Tools;
 
 namespace MasterChiefRoom.Recipes
 {
+    [Serializable]
     public abstract class Recipe
     {
         public int? OrderId = null;

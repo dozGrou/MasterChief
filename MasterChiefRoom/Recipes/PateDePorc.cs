@@ -1,7 +1,9 @@
+using System;
 using MasterChiefRoom.Ingredients;
 
 namespace MasterChiefRoom.Recipes
 {
+    [Serializable]
     public class PateDePorc : Recipe
     {
         protected override void CreateIngredients()
