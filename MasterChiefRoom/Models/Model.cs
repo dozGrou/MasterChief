@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MasterChiefRoom.Models
 {
@@ -32,6 +33,11 @@ namespace MasterChiefRoom.Models
                 new Table(),
                 new Table(),
             };
+        }
+
+        public int CountFreeTablesLeft()
+        {
+            return this.Tables.Count(table => table.Clients.Count == 0);
         }
     }
 }

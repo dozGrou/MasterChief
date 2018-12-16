@@ -29,6 +29,7 @@ namespace MasterChiefRoom.Models
                 client.Table = tableFree;
             }
             Console.WriteLine("{0} Clients assigned to table : {1}", clients.Count, tableFree.GetHashCode());
+            Console.WriteLine("{0} free tables left", this.Model.CountFreeTablesLeft());
 
             this.Model.Waiter.AskMealToClients(tableFree);
         }

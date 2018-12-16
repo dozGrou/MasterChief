@@ -45,6 +45,7 @@ namespace MasterChiefRoom.Models
             }
             
             //Notify the kitchen new order
+            Console.WriteLine("Order {0} has been sent to the kitchen", order.GetHashCode());
             //Temp without sockets
             foreach (Recipe recipe in order.Recipes)
             {
@@ -75,6 +76,7 @@ namespace MasterChiefRoom.Models
             {
                 table.Clients = new List<Client>(); //Cleaning old clients
                 Console.WriteLine("Table {0} has been cleaned", table.GetHashCode());
+                Console.WriteLine("{0} free table left", this.Model.CountFreeTablesLeft());
             }
         }
     }
