@@ -9,6 +9,13 @@ namespace MasterChiefRoom
     public class Controller
     {
         private readonly Model _model = new Model();
+
+        public Controller()
+        {
+            Console.WriteLine("Room started !");
+            Console.WriteLine("{0} tables available", this._model.Tables.Count);
+            Console.WriteLine("Waiting for clients :");
+        }
         
         public void Run()
         {
@@ -60,9 +67,9 @@ namespace MasterChiefRoom
                 {
                     clients.Add(new Client());
                 }
-                
-                this._model.HeadWaiter.NotifyNewClientsArrived(clients);
+
                 Console.WriteLine("New clients arrived : {0}", clients.Count);
+                this._model.HeadWaiter.NotifyNewClientsArrived(clients);
             }            
         }
 
@@ -94,20 +101,25 @@ namespace MasterChiefRoom
         private void Pause()
         {
             Sleeper.Instance.IsPaused = true;
-            Console.WriteLine();
+            Console.WriteLine(Sleeper.Instance.IsPaused == true
+                ? " - Pausing the simulation"
+                : " - Unpausing the simulation");
         }
 
         private void ToggleSpeed()
         {
             Sleeper.Instance.Interval =
                 Sleeper.Instance.Interval == 1 ? 60 : 1;
-            Console.WriteLine();
+
+            Console.WriteLine(Sleeper.Instance.Interval == 60
+                ? " - Accelerating the simulation"
+                : " - Decelerating the simulation");
         }
 
         private void End()
         {
             Sleeper.Instance.IsEnd = true;
-            Console.WriteLine();
+            Console.WriteLine(" - Ending the simulation");
         }
     }
 }

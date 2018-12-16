@@ -12,7 +12,7 @@ namespace MasterChiefRoom.Models
         
         public Order()
         {
-            Console.WriteLine("Order {0} received", this.GetHashCode().ToString());
+            Console.WriteLine("Order {0} created", this.GetHashCode().ToString());
             Recipes = new List<Recipe>();
             Plates = new List<Plate>();
         }
