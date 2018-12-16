@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using MasterChief.Ingredients;
-using MasterChief.Tools;
+using MasterChiefRoom.Ingredients;
+using MasterChiefRoom.Tools;
 
-namespace MasterChief.Recipes
+namespace MasterChiefRoom.Recipes
 {
-    class AppleIceCream : Recipe
+    class BananaSplit : Recipe
     {
         protected override void CreateIngredients()
         {
-            this.Ingredients.Add(new Apple(), 1);
+            this.Ingredients.Add(new Banana(), 1);
             this.Ingredients.Add(new IceCream(), 1);
         }
 
@@ -16,6 +16,7 @@ namespace MasterChief.Recipes
         {
             this.SetTools(new List<Tool>
             {
+                new Knife(),
                 new Spoon(),
             });
         }

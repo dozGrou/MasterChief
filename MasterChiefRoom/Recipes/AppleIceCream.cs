@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using MasterChief.Ingredients;
-using MasterChief.Tools;
+using MasterChiefRoom.Ingredients;
+using MasterChiefRoom.Tools;
 
-namespace MasterChief.Recipes
+namespace MasterChiefRoom.Recipes
 {
     class AppleIceCream : Recipe
     {
