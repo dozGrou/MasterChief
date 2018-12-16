@@ -65,7 +65,9 @@ namespace MasterChiefRoom
                 if (rand == 0) return;
                 for (int i = 0; i < rand; i++)
                 {
-                    clients.Add(new Client());
+                    Client client = new Client {Waiter = this._model.Waiter};
+                    this._model.Entities.Add(client);
+                    clients.Add(client);
                 }
 
                 Console.WriteLine("New clients arrived : {0}", clients.Count);

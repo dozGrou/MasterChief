@@ -68,12 +68,8 @@ namespace MasterChief.Models
 
             if (this.CheckIfOrderFinished(orderOwner))
             {
-                //Notify Room
-                Console.WriteLine("Order {0} has been finished", orderOwner.GetHashCode().ToString());
-            }
-            else
-            {
-//                Console.WriteLine("Error {0}", orderOwner.GetHashCode().ToString());
+                Console.WriteLine("Order {0} has been finished, ready to be sent to the room", orderOwner.GetHashCode().ToString());
+                //Notify Room with order
             }
         }
 

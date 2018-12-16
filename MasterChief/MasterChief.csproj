@@ -38,7 +38,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cleaner.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Ingredients\Apple.cs" />
     <Compile Include="Ingredients\Avocado.cs" />
@@ -82,6 +81,7 @@
     <Compile Include="IObserver.cs" />
     <Compile Include="IObserverCook.cs" />
     <Compile Include="Models\Chef.cs" />
+    <Compile Include="Models\Cleaner.cs" />
     <Compile Include="Models\Cook.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\KitchenClerk.cs" />

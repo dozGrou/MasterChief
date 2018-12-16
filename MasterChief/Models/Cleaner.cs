@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MasterChief.Models;
 using MasterChief.Tools;
 
-namespace MasterChief
+namespace MasterChief.Models
 {
     public class Cleaner : Entity
     {

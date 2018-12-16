@@ -12,9 +12,11 @@ namespace MasterChiefRoom.Models
         
         public List<Table> Tables { get; set; }
         public HeadWaiter HeadWaiter { get; set; }
+        public Waiter Waiter { get; set; }
 
         public Model()
         {
+            this.Waiter = new Waiter(this);
             this.HeadWaiter = new HeadWaiter(this);
             this.Entities.Add(this.HeadWaiter);
             this.Tables = new List<Table>
