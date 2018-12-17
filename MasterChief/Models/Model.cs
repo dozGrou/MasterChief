@@ -27,8 +27,8 @@ namespace MasterChief.Models
             Cleaner = new Cleaner();
             List<KitchenClerk> kitchenClerks = new List<KitchenClerk>
             {
-                new KitchenClerk(_instance),
-                new KitchenClerk(_instance),
+                new KitchenClerk(this),
+                new KitchenClerk(this),
             };
             List<Cook> cooks = new List<Cook>
             {
@@ -50,28 +50,28 @@ namespace MasterChief.Models
             
             Entities.Add(Chef);
             
-//            Order order = new Order();
-//            Recipe recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new BananaSplit();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new AppleIceCream();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            recipe = new BananaSplit();
-//            recipe.OrderId = order.GetHashCode();
-//            order.Recipes.Add(recipe);
-//            
-//            Chef.AssignOrder(order);
+            Order order = new Order();
+            Recipe recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new BananaSplit();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new AppleIceCream();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            recipe = new BananaSplit();
+            recipe.OrderId = order.GetHashCode();
+            order.Recipes.Add(recipe);
+            
+            Chef.AssignOrder(order);
         }
     }
 }

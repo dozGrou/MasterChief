@@ -11,8 +11,8 @@ namespace MasterChief
 
         public Controller()
         {
-            (new Thread(AsynchronousSocketListener.StartListening))
-                .Start();
+//            (new Thread(AsynchronousSocketListener.StartListening))
+//                .Start();
         }
         
         public void Run()

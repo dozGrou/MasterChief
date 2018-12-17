@@ -16,10 +16,7 @@ namespace MasterChief.Recipes
 
         protected override void SetTools()
         {
-            this.SetTools(new List<Tool>
-            {
-                new Spoon(),
-            });
+            this.Tools.Add(new Spoon());
         }
     }
 }

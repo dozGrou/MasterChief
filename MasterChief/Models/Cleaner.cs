@@ -30,7 +30,7 @@ namespace MasterChief.Models
             }
         }
 
-        public void WashTools(IEnumerable<Tool> tools)
+        public void WashTools(List<Tool> tools)
         {
             this.WashingTools = true;
             Console.WriteLine("Washing tools");
@@ -39,6 +39,7 @@ namespace MasterChief.Models
             {
                 Console.WriteLine("Tool : {0}", tool.GetType().Name);
             }
+            Console.WriteLine();
         }
     }
 }
