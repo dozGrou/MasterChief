@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MasterChiefRoom.Recipes;
+using Newtonsoft.Json;
 
 namespace MasterChiefRoom.Models
 {
@@ -46,12 +47,14 @@ namespace MasterChiefRoom.Models
             
             //Notify the kitchen new order
             Console.WriteLine("Order {0} has been sent to the kitchen", order.GetHashCode());
-            //Temp without sockets
-            foreach (Recipe recipe in order.Recipes)
-            {
-                order.Plates.Add(new Plate(recipe));
-            }
-            this.BringOrderToClients(order);
+            AsynchronousClient.StartClient(JsonConvert.SerializeObject(order));
+
+//            //Temp without sockets TODO
+//            foreach (Recipe recipe in order.Recipes)
+//            {
+//                order.Plates.Add(new Plate(recipe));
+//            }
+//            this.BringOrderToClients(order);
         }
 
         public void NotifyMealEnd(Table table)

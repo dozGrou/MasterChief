@@ -7,7 +7,13 @@ namespace MasterChief
 {
     public class Controller
     {
-        private readonly Model _model = new Model();
+        private readonly Model _model = Model.Instance;
+
+        public Controller()
+        {
+            (new Thread(AsynchronousSocketListener.StartListening))
+                .Start();
+        }
         
         public void Run()
         {

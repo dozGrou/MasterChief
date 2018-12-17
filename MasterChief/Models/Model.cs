@@ -5,6 +5,15 @@ namespace MasterChief.Models
 {
     public class Model
     {
+        private static Model _instance = null;
+        public static Model Instance
+        {
+            get
+            {
+                return _instance ?? (_instance = new Model());
+            }
+        }
+
         private readonly List<Entity> _entities = new List<Entity>();
         public List<Entity> Entities
         {
@@ -13,13 +22,13 @@ namespace MasterChief.Models
         public Chef Chef { get; set; }
         public Cleaner Cleaner { get; set; }
 
-        public Model()
+        private Model()
         {
             Cleaner = new Cleaner();
             List<KitchenClerk> kitchenClerks = new List<KitchenClerk>
             {
-                new KitchenClerk(this),
-                new KitchenClerk(this),
+                new KitchenClerk(_instance),
+                new KitchenClerk(_instance),
             };
             List<Cook> cooks = new List<Cook>
             {
